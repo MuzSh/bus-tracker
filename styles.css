@@ -1,4 +1,4 @@
-body {
+#body {
   margin: 0;
   padding: 0;
 }
@@ -7,10 +7,40 @@ body {
   top: 0;
   bottom: 0;
   width: 100%;
+  z-index: -4;
+  display: inline-block;
+  position: absolute;
+  background: #efefef;
+  padding: 10px;
+  font-size:xx-large;
+  font-variant: small-caps;
+
 }
 
-.map-overlay {
-  position: absolute;
+#map-overlay {
+  position:absolute;
   left: 0;
+  display: inline-block;
+  position: absolute;
+  background: #efefef;
   padding: 10px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size:xx-large;
+  font-variant: small-caps;
+}
+
+#menu{
+  z-index: 0;
+  display: inline-block;
+  position: center;
+  background: #efefef;
+  padding: 10px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size:xx-large;
+  font-variant: small-caps;
+}
+button{
+  font-size:xx-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-variant: small-caps;
 }
