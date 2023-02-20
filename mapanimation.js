@@ -14,17 +14,28 @@ const busStops = [
   [-71.118625, 42.374863],
 ];
 
-// TODO: add your own access token
-mapboxgl.accessToken =
-  'pk.eyJ1IjoidGVzdHVzZXIxMDAwIiwiYSI6ImNraDkzZ2pkMzAzMHoycnBmMXpvZ3UwZnMifQ.jAE4YsPeAJv50VK92NSpOQ';
+// TO MAKE THE MAP APPEAR YOU MUST
+// ADD YOUR ACCESS TOKEN FROM
+// https://account.mapbox.com
+mapboxgl.accessToken = 'pk.eyJ1IjoidGVzdHVzZXIxMDAwIiwiYSI6ImNraDkzZ2pkMzAzMHoycnBmMXpvZ3UwZnMifQ.jAE4YsPeAJv50VK92NSpOQ';
+  let map = new mapboxgl.Map({
+      container: 'map', // container ID
+      // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+      style: 'mapbox://styles/mapbox/outdoors-v12', // style URL
+      center: [-71.104081, 42.365554],
+      zoom: 13 // starting zoom
+  });
 
-// TODO: create the map object using mapboxgl.map() function
-let map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11',
-  center: [-71.104081, 42.365554],
-  zoom: 14,
-});
+  const layerList = document.getElementById('menu');
+  const inputs = layerList.getElementsByTagName('input');
+
+  for (const input of inputs) {
+      input.onclick = (layer) => {
+          const layerId = layer.target.id;
+          map.setStyle('mapbox://styles/mapbox/' + layerId);
+      };
+  }
+
 
 // TODO: add a marker to the map
 let marker = new mapboxgl.Marker().setLngLat([-71.092761, 42.357575]).addTo(map);
