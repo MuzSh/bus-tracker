@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+
 // This array contains the coordinates for all bus stops between MIT and Harvard
 const busStops = [
   [-71.093729, 42.359244],
@@ -17,7 +20,7 @@ const busStops = [
 // TO MAKE THE MAP APPEAR YOU MUST
 // ADD YOUR ACCESS TOKEN FROM
 // https://account.mapbox.com
-mapboxgl.accessToken = 'pk.eyJ1IjoidGVzdHVzZXIxMDAwIiwiYSI6ImNraDkzZ2pkMzAzMHoycnBmMXpvZ3UwZnMifQ.jAE4YsPeAJv50VK92NSpOQ';
+mapboxgl.accessToken = process.env.API_KEY;
   let map = new mapboxgl.Map({
       container: 'map', // container ID
       // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
